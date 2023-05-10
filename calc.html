@@ -1,0 +1,115 @@
+<html>
+	<head>
+	
+		<style>
+			#main{
+				width: 300px; 
+				height: 280px; 
+				background-color: grey;
+			}
+			
+			input{
+				width: 20%;
+				height: 40px;
+				font-size: 20px;
+				margin: 6px;
+			}
+			
+			#ee{
+				width: 90%;
+				height: 50px;
+				background-color: white;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id="main">
+			<form name="f">
+				<input type="text" name="input" placeholder="0" id="ee"> <br>
+				<input type="button" value="1" onclick="f.input.value+=1">
+				<input type="button" value="2" onclick="f.input.value+=2">
+				<input type="button" value="3" onclick="f.input.value+=3">
+				<input type="button" value="+" onclick="add()"> <br>
+				
+				<input type="button" value="4" onclick="f.input.value+=4">
+				<input type="button" value="5" onclick="f.input.value+=5">
+				<input type="button" value="6" onclick="f.input.value+=6">
+				<input type="button" value="-" onclick="sub()"> <br>
+				
+				<input type="button" value="7" onclick="f.input.value+=7">
+				<input type="button" value="8" onclick="f.input.value+=8">
+				<input type="button" value="9" onclick="f.input.value+=9">
+				<input type="button" value="/" onclick="divide()"> <br>
+				
+				<input type="button" value="c" onclick="f.input.value=''">
+				<input type="button" value="0" onclick="f.input.value+=0">
+				<input type="button" value="=" onclick="f.input.value=eval(f.input.value)">
+				<input type="button" value="x" onclick="multiply()"> <br>
+				
+				
+			</form>
+			
+		</div>
+		
+		<script>
+			function add(){
+				var act=0; b=0;
+				act=f.input.value;
+				b=act.charAt(act.length-1);
+				if(b=='+' || b=='-' || b=='/' || b=='*'){
+					f.input.value=act.substring(0,act.length-1);
+					f.input.value+="+";
+					
+				}else{
+					f.input.value+="+";
+				}
+				
+			}
+			
+			
+			function sub(){
+				var act=0; b=0;
+				act=f.input.value;
+				b=act.charAt(act.length-1);
+				if(b=='+' || b=='-' || b=='/' || b=='*'){
+					f.input.value=act.substring(0,act.length-1);
+					f.input.value+="-";
+					
+				}else{
+					f.input.value+="-";
+				}
+				
+			}
+			
+			function divide(){
+				var act=0; b=0;
+				act=f.input.value;
+				b=act.charAt(act.length-1);
+				if(b=='+' || b=='-' || b=='/' || b=='*'){
+					f.input.value=act.substring(0,act.length-1);
+					f.input.value+="/";
+					
+				}else{
+					f.input.value+="/";
+				}
+				
+			}
+			
+			function multiply(){
+				var act=0; b=0;
+				act=f.input.value;
+				b=act.charAt(act.length-1);
+				if(b=='+' || b=='-' || b=='/' || b=='*'){
+					f.input.value=act.substring(0,act.length-1);
+					f.input.value+="*";
+					
+				}else{
+					f.input.value+="*";
+				}
+				
+			}
+			
+		</script>
+	</body>
+</html>
